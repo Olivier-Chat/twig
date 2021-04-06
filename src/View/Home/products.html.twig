@@ -1,0 +1,15 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h2>Liste des fromages</h2>
+    <ul>
+        {% for i in 0..products|length/3   %}
+            {% set j = 3*i %}
+        <li>
+            {% for product in products|slice(j,j+3) %}
+                     {{ product}}
+        {% endfor %}
+        </li>
+            {% endfor %}
+{% endblock %}
+
